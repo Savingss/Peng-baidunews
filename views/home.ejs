@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/getSize.js"></script>
+    <!-- <link rel="stylesheet" href="/css/reset.css"> -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <title>百度新闻</title>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <div id="index_view_header">
+        <div class="nav-header">
+            <div class="nav-header-container nav-header-container-logo clearfix">
+                <a href="#" class="float-left baidu-icon"></a>
+                <a href="/userManager" class="float-left profile-icon"></a>
+                 <% if(typeof user != 'undefined' && user) { %>
+                    <span class="user">Welcome<%= user.username%>归来</span>
+                <% } else { %>
+                <% } %>
+                <a class="float-right subscribe-icon"></a>
+                <a class="float-right search-icon"></a>
+            </div>
+        </div>
+        <div id="index_view_navigator">
+            <div class="scrollMenu" id="scrollMenuContainer">
+                <p class="lgrad nodis" id="lgrad"></p>
+                <ul class="menus" id="scrollMenus">
+                    <li class="nav_recommend selected"><a>推荐</a></li>
+                    <li class="nav_baijia"><a>百家</a></li>
+                    <li class="nav_local"><a>本地</a></li>
+                    <!-- entertainment 娱乐简写：大写ENT -->
+                    <li class="nav_ENT"><a>娱乐</a></li>
+                    <li class="nav_community"><a>社会</a></li>
+                    <li class="nav_military"><a>军事</a></li>
+                    <li class="nav_woman"><a>女人</a></li>
+                    <li class="nav_fun"><a>搞笑</a></li>
+                    <li class="nav_Internet"><a>互联网</a></li>
+                    <li id="nav_9"><a>科技</a></li>
+                    <li id="nav_10"><a>生活</a></li>
+                    <li id="nav_11"><a>国际</a></li>
+                    <li id="nav_12"><a>国内</a></li>
+                    <li id="nav_13"><a>体育</a></li>
+                    <li id="nav_14"><a>汽车</a></li>
+                    <li id="nav_15"><a>财经</a></li>
+                    <li id="nav_16"><a>房产</a></li>
+                    <li id="nav_17"><a>时尚</a></li>
+                    <li id="nav_18"><a>教育</a></li>
+                    <li id="nav_19"><a>游戏</a></li>
+                    <li id="nav_20"><a>旅游</a></li>
+                    <li id="nav_21"><a>人文</a></li>
+                </ul>
+                <p class="rgrad"></p>
+                <p class="more"><i class="i"></i></p>
+            </div>
+            <!-- 隐藏nav -->
+            <div class="allMenu novis">
+                <div class="menusArea">
+                    <div class="title">切换栏目<a href="#" class="less"><i class="i"></i></a></div>
+                    <div class="menusbg" id="allMenusbg">
+                        <div>
+                            <ul class="menus" id="allMenus">
+                                <li class="nav_recommend selected"><a>推荐</a></li>
+                                <li class="nav_baijia"><a>百家</a></li>
+                                <li class="nav_local"><a>本地</a></li>
+                                <!-- entertainment 娱乐简写：大写ENT -->
+                                <li class="nav_ENT"><a>娱乐</a></li>
+                                <li class="nav_community"><a>社会</a></li>
+                                <li class="nav_military"><a>军事</a></li>
+                                <li class="nav_woman"><a>女人</a></li>
+                                <li class="nav_fun"><a>搞笑</a></li>
+                                <li class="nav_Internet"><a>互联网</a></li>
+                                <li><a>科技</a></li>
+                                <li><a>生活</a></li>
+                                <li><a>国际</a></li>
+                                <li><a>国内</a></li>
+                                <li><a>体育</a></li>
+                                <li><a>汽车</a></li>
+                                <li><a>财经</a></li>
+                                <li><a>房产</a></li>
+                                <li><a>时尚</a></li>
+                                <li><a>教育</a></li>
+                                <li><a>游戏</a></li>
+                                <li><a>旅游</a></li>
+                                <li><a>人文</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="btmMenu">
+                        <li><a href="#/subscribe/manage">删除及排序</a></li>
+                    </ul>
+                </div>
+                <div class="mark"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 头部 end -->
+    <!-- 轮播图 start -->
+    <div class="swiper-container newsbanner">
+        <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide"><img src="/images/1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/images/2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/images/3.jpg" alt=""></div>  -->
+        </div>
+        <!-- Add 分页器 -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add 导航按钮 -->
+        <!-- <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div> -->
+    </div>
+    <!-- 轮播图 end -->
+    <!-- 新闻内容 start -->
+    <div class="content-box scrollload-container">
+        <!-- <div class="content-item">
+            <div class="newsPic"><img src=""></div>
+            <div class="newscont">习近平主持金砖国家领导人第九次会晤
+                <p class="date">2017-09-04</p>
+            </div>
+        </div> -->
+    </div>
+    <!-- 新闻内容 end -->
+
+    <!-- 返回顶部 start -->
+    <div class="gotop"></div>
+    <!-- <div class="return_top_wrapper" style="display: block; top: 161px;">
+        <div></div>
+        <a class="return_top_static" href="javascript:void(0)" title="返回顶部" style="left: 0px;"></a>
+        <a class="return_top_running" href="javascript:void(0)" style="left: -50px;"></a>
+    </div> -->
+    <!-- 返回顶部 end -->
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="/zepto/dist/zepto.min.js"></script> -->
+    <script src="/js/jquery.lazyload.js"></script>
+    <script src="/swiper/dist/js/swiper.jquery.min.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/newsContent.js"></script>
+    <script src="/js/slider.js"></script>
+    <!-- <script src="/js/navBtns.js"></script> -->
+    <script>
+        $(function () {
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+    <script src="/js/getSizeUser.js"></script>
+    <link rel="stylesheet" href="/css/logReg.css">
+</head>
+
+<body>
+    <div id="pageWrapper">
+        <header class="pass-header ">
+            <a class="pass-header-back" id="goBack"></a>
+            <span class="pass-header-title">
+        登录百度帐号        </span>
+        </header>
+        <div class="mod-content">
+            <form autocomplete="off" method="POST" class="form-wrapper" id="login-formWrapper" data-pagename="login">
+                <div class="img-div">
+                    <div class="logo-dom"></div>
+                </div>
+                <p class="error_area" id="error"></p>
+                <p class="form-item form-input-wrapper form-item-username form-input-mobile">
+                    <input type="text" name="username" class="text-input" maxlength="60" placeholder="手机号/邮箱/用户名" id="login-username" autofocus>
+                    <span class="input-clearValue"></span>
+                    <span id="login-userlist" class="pass-input-aide pass-input-userlist"></span>
+                </p>
+                <p class="form-item form-input-wrapper form-item-password form-input-mobile">
+                    <input type="password" name="password" class="text-input" id="login-password" placeholder="密码" value="" required>
+                    <span class="input-clearValue"></span>
+                    <span id="login-pwdToggle" class="input-aide input-pwdToggle"></span>
+                </p>
+                <p class="form-item form-input-verifycode m-t10" id="login-verifyWrapper" style="display:none;">
+                    <span class="form-input-wrapper form-input-mobile vcode-span vcode-input-span">
+<input type="text" name="verifycode" class="text-input" value="" placeholder="验证码" autocomplete="off" maxlength="6" id="login-verifycode">
+<span class="input-clearValue"></span>
+                    </span>
+                    <span class="form-input-mobile form-input-verifyCodeImg">
+<img class="verifyCode-img" src="https://wappass.baidu.com/cgi-bin/genimage?" width="100" height="40" id="login-verifyCodeImg">
+</span>
+                    <input type="hidden" id="login-vcodestr" name="vcodestr" value="">
+                </p>
+                <p class="form-item form-item-btn">
+                    <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="u" value="https%3A%2F%2Fnews.baidu.com%2Fnews%3Fuid%3D1504789746817_689%23%2F">
+                    <input type="hidden" name="tpl" value="">
+                    <input type="hidden" name="tn" value="">
+                    <input type="hidden" name="pu" value="">
+                    <input type="hidden" name="ssid" value="">
+                    <input type="hidden" name="from" value="">
+                    <input type="hidden" name="bd_page_type" value="">
+                    <input type="hidden" name="uid" value="1504789746817_689">
+                    <input type="hidden" name="type" value="">
+                    <input type="hidden" name="regtype" value="">
+                    <input type="hidden" name="subpro" value="">
+                    <input type="hidden" name="adapter" value="0">
+                    <input type="hidden" name="skin" value="default_v2">
+                    <input type="hidden" name="regist_mode" value="">
+                    <input type="hidden" name="login_share_strategy" value="">
+                    <input type="hidden" name="client" value="">
+                    <input type="hidden" name="clientfrom" value="">
+                    <input type="hidden" name="connect" value="0">
+                    <input type="hidden" name="bindToSmsLogin" value="">
+                    <input type="hidden" id="login-isphone" name="isphone" value="">
+                    <input type="hidden" id="login-loginmerge" name="loginmerge" value="1">
+                    <input type="hidden" id="login-dialogVerifyCode">
+                    <input type="hidden" id="smslogin-vcodestr">
+                    <input type="hidden" id="smslogin-vcodesign">
+                    <input type="hidden" id="dv_Input" name="dv" value="MDExAAoAzgALAbUAEQAAAF00AAwCAAuV1tPT08v4luOP4wwCAAuVhICAgJiO4JX5lQcCAASRkZGRDAIAC5WHh4eHg_aY7YHtBgIAKJGRkZGRkZGRkZGQ-Pj4-np6ensTExMRkZGRkPj4-Pp6enp7ExMTEZEEAgAGk5ORkKWcFQIACJGRkM6S5z1TBQIABJGRkZ0BAgAGkZCQhjrbFgIAIrDEr5-xiL-JvYqygbOGt4Oyg7CGsoO2hrKFvYSzi7qKsoYXAgAMkpPo6O_SosPqxrTvEAIAAZETAgDGkfDwkfmN-Yn6wO_At9am1rfEt5n7mvOX4syvwK2C8pPgk-OM_oqlmvaZ_pf536qX_4v_j_zZ697trIm7jrz63-3Y6qzCp9Cjje-O54P22LvUuZyum6nvgeST4MX3wvDD5tTh05X9if2N_sTrxLPSotKzwLOd_573k-bIq8SphvaX5JfniPqOoZ7ynfqT_duuk_uP-4v43e_a6aiNv4q4_tvp3O6oxqPUp4nriuOH8ty_0L2Yqp-t64Xgl-TB88b0x-LQ5deRBwIABJGRkZEHAgAEkZGRkQwCAAuVhYWFhZJcMkcrRwcCAASRkZGR">
+                    <input type="hidden" id="getpassUrl" name="getpassUrl" value="/passport/getpass?clientfrom=&amp;adapter=0&amp;ssid=&amp;from=&amp;authsite=&amp;bd_page_type=&amp;uid=1504789746817_689&amp;pu=&amp;tpl=&amp;u=https://news.baidu.com/news%3Fuid%3D1504789746817_689%23/&amp;type=&amp;bdcm=415f0108f81986185c7adab44aed2e738bd4e65b&amp;tn=&amp;regist_mode=&amp;login_share_strategy=&amp;subpro=&amp;skin=default_v2&amp;client=&amp;connect=0&amp;smsLoginLink=1&amp;loginLink=&amp;bindToSmsLogin=&amp;overseas=&amp;is_voice_sms=&amp;subpro=&amp;hideSLogin=&amp;forcesetpwd=&amp;regdomestic=">
+                    <!-- pass-button-full-disabled 改变登录文字颜色 -->
+                    <input type="button" value="登录" id="login-submit" class="pass-button-full">
+                </p>
+                <div class="f14 clearfix login-problem">
+                    <a class="left" href="/v3/security/manager?clientfrom=&amp;adapter=0&amp;ssid=&amp;from=&amp;authsite=&amp;bd_page_type=&amp;uid=1504789746817_689&amp;pu=&amp;tpl=&amp;u=https://news.baidu.com/news%3Fuid%3D1504789746817_689%23/&amp;type=&amp;bdcm=415f0108f81986185c7adab44aed2e738bd4e65b&amp;tn=&amp;regist_mode=&amp;login_share_strategy=&amp;subpro=&amp;skin=default_v2&amp;client=&amp;connect=0&amp;smsLoginLink=1&amp;loginLink=&amp;bindToSmsLogin=&amp;overseas=&amp;is_voice_sms=&amp;subpro=&amp;hideSLogin=&amp;forcesetpwd=&amp;regdomestic="
+                        data-user-urllog="touch-login_question">登录遇到问题</a>
+                    <a id="login-other" class="type-other-login">其他登录方式</a>
+                </div>
+            </form>
+            <p class="pass-mod-loadingWrap" id="login-loading">
+                <span class="pass-mod-loadingImg"></span> 正在加载...
+            </p>
+            <p class="f14 account-login account-login-width">
+                <a href="/userManager/userRegister">立即注册</a>
+            </p>
+            <div class="layer-cover">
+                <footer class="layer-account">
+                    <a href="javascript:void(0);" class="sms-login-layer">短信验证登录</a>
+                    <a href="javascript:void(0);" style="display: none;">百度帐号登录</a>
+                    <a href="javascript:void(0);" class="cancle-btn" data-log="touch-other_login_cancel">取消</a>
+                </footer>
+                <footer class="layer-account-third">
+                    <a href="javascript:void(0);" class="tsina">新浪微博</a>
+                    <a href="javascript:void(0);" class="qzone">QQ登录</a>
+                    <a href="javascript:void(0);" class="cancle-btn" data-log="touch-authsite_cancel">取消</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/js/userLogin.js"></script>
+
+</html>

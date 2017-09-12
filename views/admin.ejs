@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <title>admin后台管理</title>
+</head>
+
+<body>
+
+  <div class="container-fiuld">
+    <div class="">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">百度新闻后台信息管理</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <!-- 左边开始 -->
+            <div class="col-md-6">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">新闻发布器</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="newsTable">
+                    <div class="form-group">
+                      <label for="newsTitle">新闻标题</label>
+                      <input type="text" class="form-control" id="newsTitle" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="newsContent">新闻正文</label>
+                      <textarea class="form-control newsContent" rows="10" id="newsContent"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="newsImg">新闻图片地址</label>
+                      <input type="text" class="form-control" id="newsImg" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="newsTime">新闻日期</label>
+                      <input type="date" class="form-control" id="newsTime" value="">
+                    </div>
+                    <select class="form-control" id="newsTag">
+                      <option>推荐</option>
+                      <option>百家</option>
+                      <option>本地</option>
+                      <option>互联网</option>
+                      <option>娱乐</option>
+                      <option>社会</option>
+                      <option>军事</option>
+                      <option>女人</option>
+                      <option>搞笑</option>
+                    </select>
+                    <!-- 提交按钮的模态框 start-->
+                    <button type="submit" class="btn btn-primary bt-lg margintop" data-toggle="modal" data-target="#gridSystemModal" id="addBtn">提 交？</button>
+                    <div id="gridSystemModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="gridModalLabel">上线上线~</h4>
+                          </div>
+                          <div class="modal-body tipsContent"></div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="modify">再修改一下吧</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirmAddBtn">确定发布吧</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 提交按钮的模态框 end-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 左边结束 -->
+            <!-- 右边开始 -->
+            <div class="col-md-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">新闻列表</h3>
+                </div>
+                <div class="panel-body detailBox">
+                  <!-- 删除选中项模态框 start-->
+                  <button type="button" class="btn btn-danger bt-lg marginbott delCurBtn" data-toggle="modal" data-target="#cur" disabled>删除选中项</button>
+                  <button type="button" class="btn btn-info bt-lg marginbott cancelCurBtn" data-toggle="modal" disabled>取消选择</button>
+                  <button type="button" class="btn btn-info bt-lg marginbott CurAllBtn" data-toggle="modal">全部选择</button>
+                  <button type="button" class="btn btn-info bt-lg marginbott CurReverseBtn" data-toggle="modal" disabled>反向选择</button>
+                  <button type="button" class="btn btn-danger bt-lg marginbott delAllBtn" data-toggle="modal" data-target="#foo">清 空 全 部</button>
+                  <input type="text" class="form-control marginbott" id="searchBtn" placeholder="模糊搜索">
+                  <div id="cur" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          <h4 class="modal-title" id="gridModalLabel">删除选中项</h4>
+                          <div class="modal-body">
+                            <h3>Are U Sure？！？！</h3>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">再想想吧</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirmDelCurBtn">主意已决</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 删除选中项模态框 end-->
+
+                  <!-- 删除全部按钮的模态框 start-->
+                 
+                  <div id="foo" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          <h4 class="modal-title" id="gridModalLabel">你确定？！确定？？确定！？</h4>
+                          <div class="modal-body">
+                            <h3>手下留情！！大侠！！T.T！！~</h3>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelDelAllBtn">还是再想想吧</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="delAllBtn">主意已决~去死吧</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 删除全部按钮的模态框 end-->
+                  <!-- 覆盖层 -->
+                  <!-- <table class="table muck">
+                    <thead class="newsHead">
+                      <td class="newsId">新闻编号</td>
+                      <td class="newsTitle">新闻标题</td>
+                      <td class="newsTime">新闻时间</td>
+                      <td class="manager">管理员操作</td>
+                    </thead>
+                  </table>  -->
+                  <!-- 覆盖层 -->
+                  <div class="newsMessage-box">
+                    <table class="table newsMessage" table-layout="fixed">
+                      <thead class="newsHead">
+                        <td>新闻编号</td>
+                        <td class="newsTitle">新闻标题</td>
+                        <td>新闻时间</td>
+                        <td>管理员操作</td>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                  <nav aria-label="Page navigation nav-height">
+                    <ul class="pagination pag-margin">
+                      <li>
+                        <a href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li>
+                        <a href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <!-- 删除单条新闻按钮模态框 start -->
+                  <div id="oddDel" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          <h4 class="modal-title" id="gridModalLabel">你确定要删除我吗？</h4>
+                          <div class="modal-body">
+                            <h3>这么绝？！</h3>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default cancelDelBtn" data-dismiss="modal">还是再想想吧</button>
+                            <button type="button" class="btn btn-primary confirmDelBtn" data-dismiss="modal">主意已决~去死吧</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 删除单条新闻按钮模态框 end -->
+
+                  <!-- 修改单条新闻按钮模态框 start -->
+                  <div id="updateNews" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          <h4 class="modal-title" id="gridModalLabel">修改模态框</h4>
+                          <div class="modal-body">
+                            <!-- 修改模态框内容 start -->
+                            <div class="container-fluid">
+                              <div class="col-md-12">
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title">新闻发布器</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                    <!-- 面板内容 start -->
+                                    <form class="mod-newsTable">
+                                      <div class="form-group">
+                                        <label for="newsTitle">新闻标题</label>
+                                        <input type="text" class="form-control" id="mod-newsTitle" value="" required>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="newsContent">新闻正文</label>
+                                        <textarea class="form-control newsContent" rows="10" id="mod-newsContent" required></textarea>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="newsImg">新闻图片地址</label>
+                                        <input type="text" class="form-control" id="mod-newsImg" value="" required>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="newsTime">新闻日期</label>
+                                        <input type="date" class="form-control" id="mod-newsTime" value="" required>
+                                      </div>
+                                      <select class="form-control" id="mod-newsTag">
+                                        <option>推荐</option>
+                                        <option>百家</option>
+                                        <option>本地</option>
+                                        <option>图片</option>
+                                        <option>娱乐</option>
+                                        <option>社会</option>
+                                        <option>军事</option>
+                                        <option>女人</option>
+                                        <option>搞笑</option>
+                                      </select>
+                                      <!-- 面板内容 end -->
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 修改模态框内容 end -->
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default cancelDelBtn" data-dismiss="modal">还是再想想吧</button>
+                            <button type="button" class="btn btn-primary modUpdateBtn" data-dismiss="">修改</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 修改单条新闻按钮模态框 end -->
+                </div>
+              </div>
+            </div>
+            <!-- 右边结束 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/admin.js"></script>
+<script>
+  // $(function () {
+
+  //   //获取数据库的每条新闻信息
+  //   alert('欢迎来到百度新闻管理后台');
+  //   // $('.modUpdateBtn').text('还有空缺项，我暂时失效');
+  //   // $('.modUpdateBtn').attr('data-dismiss', 'modal');
+  //   getAllNews();
+  //   // 获取全部
+  //   function getAllNews() {
+  //     $.ajax({
+  //       url: '/handleNews/getAllNews',
+  //       type: 'post',
+  //       success: function (data) {
+  //         // console.log('响应成功！~');
+  //         $('.newsTr').remove();
+  //         // $('<tr class="newsHead"><td>新闻编号</td><td>新闻标题</td><td>新闻时间</td><td>管理员操作</td></tr>').prependTo($('.newsMessage'));
+  //         data.allNews.forEach(function (val, ind) {
+  //           $(
+  //             `<tr class="newsTr">
+  //               <td>${val.newsId}</td>
+  //               <td>${val.newsTitle}</td>
+  //               <td>${val.newsTime}</td>
+  //               <td>
+  //                 <button type="button" class="btn btn-default updBtn" data-toggle="modal" data-target="#updateNews">修改</button>
+  //                 <button type="button" class="btn btn-warning delBtn" data-toggle="modal" data-target="#oddDel">删除</button>
+  //               </td>
+  //             </tr>`
+  //           ).prependTo($('tbody'));
+  //         });
+  //       },
+  //       error: function (err) {
+  //         console.log('响应失败，不能获取数据~');
+  //       }
+  //     });
+  //   }
+
+  //   //点击检验是否有空缺项
+  //   var isEmpty = $('.newsTable').find('input,textarea');
+  //   $('#addBtn').click(function () {
+  //     isEmpty.each(function (ind, val) {
+  //       if ($(val).val() == '') {
+  //         $('.tipsContent').html('还有空缺项哟~');
+  //         $('#confirmAddBtn').prop('disabled', true);
+  //         return false;
+  //       }
+  //       $('.tipsContent').html('想清楚再按~');
+  //       $('#confirmAddBtn').prop('disabled', false);
+  //     });
+  //   });
+  //   // 提交按钮模态框的取消按钮
+  //   $('#modify').click(function () {
+  //     isEmpty.each(function (ind, val) {
+  //       if ($(val).val() == "") {
+  //         setTimeout(function () {
+  //           $(val).focus();
+  //           $(val).parent().addClass('has-error');
+  //         }, 350);
+  //         return false;
+  //       }
+  //       $(val).parent().removeClass('has-error');
+  //     })
+  //   });
+  //   // 失去焦点移除类名 has-error
+  //   isEmpty.blur(function () {
+  //     $(this).parent().removeClass('has-error');
+  //   })
+  //   //提交按钮模态框的确认添加按钮
+  //   $('#confirmAddBtn').click(function () {
+  //     addNews();
+  //     $('#newsTitle').val('');
+  //     $('#newsContent').val('');
+  //     $('#newsImg').val('');
+  //     $('#newsTime').val('');
+  //     // $('#newsTag').val('');
+  //   })
+
+  //   //添加新闻
+  //   function addNews() {
+  //     var contents = {
+  //       newsTitle: $('#newsTitle').val(),
+  //       newsContent: $('#newsContent').val(),
+  //       newsImg: $('#newsImg').val(),
+  //       newsTime: $('#newsTime').val(),
+  //       newsTag: $('#newsTag').val()
+  //     }
+  //     $.ajax({
+  //       url: '/handleNews/addNews',
+  //       type: 'post',
+  //       data: contents,
+  //       success: function (data) {
+  //         if (data.state == 'ok') {
+  //           // alert('添加成功');
+  //           getAllNews();
+  //         }
+  //       },
+  //       error: function (err) {
+  //         console.log('添加失败');
+  //       }
+  //     });
+  //   }
+
+  //   // 点击清空全部按钮给全部tr添加类名colorGray
+  //   $('.delAllBtn').click(function () {
+  //     $('tbody').find('.newsTr').addClass('colorGray');
+  //   })
+  //   // 取消删除全部新闻按钮（此按钮在模态框里面）
+  //   $('#cancelDelAllBtn').click(function () {
+  //     $('tbody').find('.newsTr').removeClass('colorGray');
+  //   })
+  //   // 确认删除全部新闻按钮（此按钮在模态框里面）
+  //   $('#delAllBtn').click(function () {
+  //     $.ajax({
+  //       url: '/handleNews/deleteAllNews',
+  //       type: 'get',
+  //       success: function (data) {
+  //         if (data.state = 'ok') {
+  //           getAllNews();
+  //         }
+  //       },
+  //       error: function (err) {
+  //         console.log(err)
+  //       }
+  //     });
+  //   })
+
+  //   //删除||修改，选中项
+  //   $('tbody').on('click', '.newsTr', function () {
+  //     //这里的this指向每一个类名为newsTr的元素
+  //     if (!$(this).hasClass('colorGray')) {
+  //       $(this).addClass('colorGray');
+  //       $('.delCurBtn').prop('disabled', false);
+  //       $('.cancelCurBtn').prop('disabled', false);
+  //       //赋值给新闻发布器
+
+  //     } else {
+  //       $(this).removeClass('colorGray');
+  //       var res = $('tbody').find('.newsTr').hasClass('colorGray');
+  //       if (!res) {
+  //         $('.delCurBtn').prop('disabled', true);
+  //         $('.cancelCurBtn').prop('disabled', true);
+  //       }
+  //     }
+  //   })
+
+  //   //点击删除单条新闻按钮获取newsid
+  //   var newsid;
+  //   $('tbody').on('click', '.delBtn', function (e) {
+  //     // e.stopPropagation(); //question??
+  //     newsid = $(this).parents('tr').find('td:first-child').text();
+  //   })
+  //   //确认点击删除单条新闻
+  //   $('.confirmDelBtn').click(function () {
+  //     $.ajax({
+  //       url: '/handleNews/deleteNews',
+  //       type: 'get',
+  //       data: {
+  //         newsid: newsid
+  //       },
+  //       success: function (data) {
+  //         if (data.state == 'ok') {
+  //           console.log('删除成功');
+  //           getAllNews();
+  //           $('.newsTr').removeClass('colorGray');
+  //           $('.delCurBtn').prop('disabled', true);
+  //           $('.cancelCurBtn').prop('disabled', true);
+  //         }
+  //       }
+  //     })
+  //   })
+
+  //   //点击修改按钮获后发送该项新闻编号（id）然后取该项的新闻信息
+  //   $('tbody').on('click', '.updBtn', function () {
+  //     newsid = $(this).parents('tr').find('td:first-child').text();
+  //     $.ajax({
+  //       url: '/handleNews/getUpdateId',
+  //       type: 'get',
+  //       data: {
+  //         newsid: newsid
+  //       },
+  //       success: function (data) {
+  //         if (data.state == 'ok') {
+  //           console.log('获取成功hahahahahahah');
+  //           $('#mod-newsTitle').val(data.results[0].newsTitle);
+  //           $('#mod-newsContent').val(data.results[0].newsContent);
+  //           $('#mod-newsImg').val(data.results[0].newsImg);
+  //           $('#mod-newsTag').val(data.results[0].newsTag);
+  //           var newTime = data.results[0].newsTime.substr(0, 10);
+  //           $('#mod-newsTime').val(newTime);
+  //         }
+  //       },
+  //       error: function (err) {
+  //         console.log(err)
+  //       }
+  //     })
+  //   })
+
+  //   // 确认修改新闻信息按钮和方法 start
+  //   $('.modUpdateBtn').click(function () {
+  //     setTimeout(function () {
+  //       $('.modUpdateBtn').attr('data-dismiss', '');
+  //       $('.modUpdateBtn').text('修改');
+  //     }, 10);
+  //     if ($(this).text() == '确认修改') {
+  //       confirmUpdate();
+  //     }
+  //   })
+
+  //   function confirmUpdate() {
+  //     $.ajax({
+  //       url: '/handleNews/updateNews',
+  //       type: 'get',
+  //       data: {
+  //         newsId: newsid,
+  //         newsTitle: $('#mod-newsTitle').val(),
+  //         newsContent: $('#mod-newsContent').val(),
+  //         newsImg: $('#mod-newsImg').val(),
+  //         newsTag: $('#mod-newsTag').val(),
+  //         newsTime: $('#mod-newsTime').val()
+  //       },
+  //       success: function (data) {
+  //         if (data.state = 'ok') {
+  //           alert('修改成功！~');
+  //           getAllNews();
+  //         }
+  //       },
+  //       error: function (err) {
+  //         alert('修改失败！~');
+  //       }
+  //     })
+  //   }
+  //   // 确认修改新闻信息按钮和方法 end
+
+  //   //修改新闻信息模态框验证空缺项
+  //   var modIsEmpty = $('.mod-newsTable').find('input,textarea');
+  //   // console.log(modIsEmpty)
+  //   $('.mod-newsTable').on('input propertychange', 'input,textarea,select', function () {
+  //     $(modIsEmpty).each(function (ind, val) {
+  //       if ($(val).val() == '') {
+  //         $('.modUpdateBtn').text('还有空缺项，我暂时失效');
+  //         $('.modUpdateBtn').attr('data-dismiss', '');
+  //         // return false;
+  //       } else {
+  //         $('.modUpdateBtn').text('确认修改');
+  //         $('.modUpdateBtn').attr('data-dismiss', 'modal');
+  //       }
+  //     })
+  //   })
+  //   //取消删除单条新闻按钮（此按钮在模态框里面）
+  //   $('.cancelDelBtn').click(function () {
+  //     $('.newsTr').removeClass('colorGray');
+  //     $('.delCurBtn').prop('disabled', true);
+  //     $('.cancelCurBtn').prop('disabled', true);
+  //     $('.modUpdateBtn').text('修改');
+  //     $('.modUpdateBtn').attr('data-dismiss', '');
+  //   })
+
+  //   //取消选择
+  //   $('.cancelCurBtn').click(function () {
+  //     $('.newsTr').removeClass('colorGray');
+  //     $('.delCurBtn').prop('disabled', true);
+  //     $('.cancelCurBtn').prop('disabled', true);
+  //   })
+  //   //全部选择
+  //   var CurAllFlag = 1;
+  //   $('.CurAllBtn').click(function () {
+  //     if (CurAllFlag) {
+  //       CurAllFlag = 0;
+  //       $('tbody').find('.newsTr').addClass('colorGray');
+  //       $('.delCurBtn').prop('disabled', false);
+  //       $('.cancelCurBtn').prop('disabled', false);
+  //     } else {
+  //       CurAllFlag = 1;
+  //       $('tbody').find('.newsTr').removeClass('colorGray');
+  //       $('.delCurBtn').prop('disabled', true);
+  //       $('.cancelCurBtn').prop('disabled', true);
+  //     }
+  //   })
+
+  //   //点击删除选中项按钮获取新闻被选中的id
+  //   var newsIdArr = [];
+  //   $('.delCurBtn').click(function () {
+  //     newsIdArr = [];
+  //     $('.newsTr').each(function (ind, val) {
+  //       if ($(val).hasClass('colorGray')) {
+  //         var newsid = $(val).find('td:first-child').html();
+  //         newsIdArr.push(newsid);
+  //       }
+  //     })
+  //   })
+  //   //确认删除选中项按钮（此按钮在在模态框里面）
+  //   $('#confirmDelCurBtn').click(function () {
+  //     console.log(newsIdArr);
+  //     $.ajax({
+  //       url: '/handleNews/delCurNews',
+  //       type: 'get',
+  //       data: {
+  //         newsIdArr: newsIdArr
+  //       },
+  //       success: function (data) {
+  //         alert('删除成功');
+  //         getAllNews();
+  //         $('.delCurBtn').prop('disabled', true);
+  //         $('.cancelCurBtn').prop('disabled', true);
+  //       }
+  //     })
+  //   })
+
+  // }) // 最外层
+</script>
+
+</html>

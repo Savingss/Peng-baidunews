@@ -1,0 +1,131 @@
+html,
+body {
+    height: 100%;
+    background: linear-gradient(to right top, #fff, #000) no-repeat;
+}
+
+.form-control {
+    resize: none;
+    margin-right: -50px;
+}
+
+.margintop {
+    margin-top: 20px;
+}
+
+.marginbott {
+    margin-bottom: 15px;
+}
+
+.newsMessage-box {
+    height: 550px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+    position: relative
+}
+
+.newsMessage>tbody>tr>td {
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.newsMessage>thead>tr>td {
+    height: 50px;
+    font-size: 18px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.newsMessage td{
+    text-align: center;
+}
+
+
+/* .btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0;
+} */
+
+button.btn:focus,
+button.btn:active:focus,
+button.btn.active:focus,
+button.btn.focus,
+button.btn:active.focus,
+button.btn.active.focus {
+    outline: 0;
+}
+
+.newsTr {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.newsTr:hover {
+    background: #e0e0e0;
+}
+
+.colorGray {
+    background: #e0e0e0;
+}
+
+.delAllBtn {
+    float: right;
+    margin-right: 35px;
+}
+
+.delCur {
+    float: left;
+    margin: 0 15px;
+}
+
+.newsTitle {
+    width: 300px;
+}
+
+.delBtn {
+    position: relative;
+}
+
+.btn-default.focus,
+.btn-default:focus {
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.nav-height {
+    height: 49px;
+}
+
+.pag-margin {
+    margin: 0;
+}
+
+
+/* 覆盖层 */
+
+.muck {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+ 
+ /* .muck .newsId {
+    width: 107px;
+} */
+
+/* .muck .newsTitle {
+    width: 273px;
+} */
+
+.muck .newsTime {
+    width: 281px;
+}
+
+ .muck .manager {
+    width: 173px;
+}    

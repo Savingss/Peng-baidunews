@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/getSizeUser.js"></script>
+    <link rel="stylesheet" href="/css/logReg.css">
+    <title>用户注册</title>
+</head>
+
+<body>
+    <div id="pageWrapper">
+        <header class="pass-header ">
+            <a class="pass-header-back" id="goBack"></a>
+            <span class="pass-header-title">百度帐号注册</span>
+        </header>
+        <div class="mod-content">
+            <form autocomplete="off" method="POST" class="form-wrapper" id="reg-formWrapper">
+                <p class="error_area" id="error"></p>
+                <div class="img-div">
+                    <div class="logo-dom"></div>
+                </div>
+                <p class="form-item form-input-wrapper form-item-mobilenum form-input-mobile">
+                    <input type="tel" id="reg-mobilenum" name="mobilenum" class="text-input" maxlength="11" placeholder="输入有效手机号" value="" autofocus>
+                    <span class="input-clearValue"></span>
+                </p>
+                <p class="form-item form-input-wrapper form-item-mobilenum form-input-mobile marginTop">
+                    <input type="text" id="mobilepwd" name="mobilenum" class="text-input" maxlength="20" placeholder="输入6到20位必须由字母数字组合的密码" value="">
+                    <span class="input-clearValue"></span>
+                </p>
+                <p class="form-item form-input-wrapper form-item-mobilenum form-input-mobile marginTop">
+                    <input type="text" id="mobilerepwd" name="mobilenum" class="text-input" maxlength="20" placeholder="再次确认密码" value="">
+                    <span class="input-clearValue"></span>
+                </p>
+                <p class="form-item form-item-btn">
+                    <input value="确认注册新用户" id="reg-verifyCodeSend" class="pass-button-full pass-button-full-disabled" type="button" disabled="disabled">
+                </p>
+                <p class="f14 gray">
+                    <input type="checkbox" name="agree" id="reg-agree">&nbsp;同意并阅读&nbsp;<a class="agreement-a" href="#">百度用户协议</a>&nbsp;及&nbsp;
+                    <a class="agreement-a" href="#">百度隐私权保护声明</a>
+                </p>
+                <p class="pass-mod-loadingWrap" id="reg-loading">
+                    <span class="pass-mod-loadingImg"></span> 正在加载...
+                </p>
+                <p class="form-item form-item-btn">
+                    <input type="hidden" name="action" value="reg">
+                    <input type="hidden" name="u" value="https%3A%2F%2Fnews.baidu.com%2Fnews%3Fuid%3D1504789746817_689%23%2F">
+                    <input type="hidden" name="tpl" value="">
+                    <input type="hidden" name="tn" value="">
+                    <input type="hidden" name="pu" value="">
+                    <input type="hidden" name="ssid" value="">
+                    <input type="hidden" name="from" value="">
+                    <input type="hidden" name="bd_page_type" value="">
+                    <input type="hidden" name="uid" value="1504789746817_689">
+                    <input type="hidden" name="type" value="">
+                    <input type="hidden" name="regtype" value="0">
+                    <input type="hidden" name="subpro" value="">
+                    <input type="hidden" name="adapter" value="0">
+                    <input type="hidden" name="skin" value="default_v2">
+                    <input type="hidden" name="regist_mode" value="">
+                    <input type="hidden" name="login_share_strategy" value="">
+                    <input type="hidden" name="client" value="">
+                    <input type="hidden" name="clientfrom" value="">
+                    <input type="hidden" name="connect" value="">
+                    <input type="hidden" name="bindToSmsLogin" value="">
+                    <input type="hidden" name="bdcm" value="240267d1d43f8794cec27d1ed21b0ef41bd53a65">
+                    <input type="hidden" id="reg-tempid" name="tempid" value="">
+                    <input type="hidden" name="agreement" value="1">
+                    <input type="hidden" name="dialogVerifyCode" value="" id="reg-dialogVerifyCode">
+                    <input type="hidden" name="vcodesign" value="" id="reg-vcodesign">
+                    <input type="hidden" name="vcodestr" value="" id="reg-vcodestr">
+                    <input type="hidden" id="reg-type" value="">
+                    <input type="hidden" id="reg-checkPhone" value="">
+                    <input type="hidden" id="reg-countrycode" value="">
+                </p>
+            </form>
+            <p class="f14 account-reg" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                只需一个百度帐号，即可通行所有百度产品/服务</p>
+        </div>
+    </div>
+</body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/js/userRegister.js"></script>
+
+</html>
